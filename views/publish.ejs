@@ -1,0 +1,61 @@
+<%- include('header') %>
+    <!-- <div class="nav">
+    <ul>
+        <li><a href="/reg">Sign up</a></li>
+        <li><a href="/log">Sign in</a></li>
+        <li><a href="/">Sign out</a></li>
+    </ul>
+    </div> -->
+    <div class="nav">
+        <div class="nav_area">
+            <div class="center_area">
+                <div class="clearfix">
+                    <ul class="navigation">
+                        <li class="dropdown">
+                            <a href="/">首页</a>
+                        </li>
+                        <li class="lastchild" style="float:right">
+                            <a href="/">登出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container">
+        <div id="publisher">
+            <p>
+                <%= val %>
+            </p>
+        </div>
+    </div> -->
+    <div id="container" class="container">
+        <div class="blogtext content">
+            <h3>已发布</h3>
+            <div style="float: left;">
+                <%= val %>
+            </div>
+            <div style="float:right;">
+                <a href="#">
+                    <span title="删除" style="font-size: 1em;">&times;</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+        
+    <footer>
+        <hr/>
+        <p>
+            <a href="http://www.knight.com" target="_blank">ByKnight</a>
+            &copy 2018
+        </p>
+    </footer>
+        
+    <div id="scrolltop" style="right:10px;visibility:visible;">
+        <span>
+            <a title="返回首页" class="returnboard" hidefocus="true" href="/"></a>
+        </span>
+    </div>
+<%- include('footer') %>
