@@ -24,13 +24,12 @@ let createReg = `create table if not exists user(
     password char(100),
     email char(30),
     telephone char(15)
-)`;
+);`;
 //创建发表内容数据表
 let createPub = `create table if not exists content(
     id int not null primary key auto_increment,
-    contents varchar(500)
-      
-)`;
+    contents varchar(500)   
+);`;
 //注册信息保存确认
 connection.query(createReg, function (err, results) {
     if (err) {
@@ -48,10 +47,10 @@ connection.query(createPub, function (err, results) {
 
 //插入用户登陆信息
 function SQL(value) {
-    let stmt = `INSERT INTO user(id,username,password,email,telephone) VALUES ?`;
+    let stmt = `INSERT INTO user(id,username,password,email,telephone) VALUES ?;`;
 
     connection.query(stmt, [value], (err, results) => {
-        if (err) {
+        if(err) {
             return console.error(err.message);
         }
         console.log('Row inserted: ' + results.affectedRows);
@@ -60,9 +59,9 @@ function SQL(value) {
 
 //插入发表的内容
 function Cont(value) {
-    let stmt = `INSERT INTO content(id,contents) VALUES ?`;
-    connection.query(stmt, [value], (err, results) => {
-        if (err) {
+    let stmts = `INSERT INTO content(id,contents) VALUES ?;`;
+    connection.query(stmts, [value], (err, results) => {
+        if(err) {
             return console.error(err.message);
         }
         console.log('Row inserted again: ' + results.affectedRows);
