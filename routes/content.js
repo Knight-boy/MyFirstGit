@@ -15,14 +15,13 @@ router.get('/pub', function (req, res, next) {
     router.post('/pub', function (req, res, next) {
 
         let value = [[null,req.body.contents]];
-
         sql.Cont(value);
 
-        var r = res.body;
+        var r;
         r = req.body.contents;
         console.log(r);
 
-        req.flash('success','发布成功');
+        //req.flash('success','发布成功');
         res.render('publish',{
             title: 'Publisher',
             val: `${r}`
