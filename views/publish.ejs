@@ -26,25 +26,35 @@
     <!-- <div class="container">
         <div id="publisher">
             <p>
-                <%= val %>
+
             </p>
         </div>
     </div> -->
     <div id="container" class="container">
-        <div class="blogtext content">
-            <h3>已发布</h3>
-            <div style="float: left;">
+        <h2>已发布</h2>
+        <ul class="blogtext content" id ="parent">
+            <li>
                 <%= val %>
-            </div>
-            <div style="float:right;">
-                <a href="#">
-                    <span title="删除" style="font-size: 1em;">&times;</span>
-                </a>
-            </div>
-        </div>
-        
+                <div style="font-size: 1em;display:inline-block;float:right;cursor: pointer;"><span>删除</span></div>
+            </li>
+        </ul>
     </div>
-        
+    <script>
+        var x=document.getElementById("parent");
+        var lists = document.getElementsByTagName("li");
+        var list;
+        //给所有的li元素添加捕获阶段的事件处理程序
+        for(var i=0;i<lists.length;i++)
+        {
+            lists[i].addEventListener("click", function(e) {
+                list = e.currentTarget;
+            },true);
+        }
+        var handler = function() {
+            x.removeChild(list);
+        };
+        x.addEventListener("click",handler,false);
+    </script>
     <footer>
         <hr/>
         <p>
